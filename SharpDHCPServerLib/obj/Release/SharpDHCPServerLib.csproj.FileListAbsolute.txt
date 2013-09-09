@@ -1,6 +1,0 @@
-D:\Projects\SharpDHCPServer\SharpDHCPServerLib\bin\Release\SharpDHCPServerLib.dll
-D:\Projects\SharpDHCPServer\SharpDHCPServerLib\bin\Release\SharpDHCPServerLib.pdb
-D:\Projects\SharpDHCPServer\SharpDHCPServerLib\obj\Release\ResolveAssemblyReference.cache
-D:\Projects\SharpDHCPServer\SharpDHCPServerLib\obj\Release\SharpDHCPServerLib.dll
-D:\Projects\SharpDHCPServer\SharpDHCPServerLib\obj\Release\SharpDHCPServerLib.pdb
-D:\Projects\SharpDHCPServer\SharpDHCPServerLib\bin\Release\SharpDHCPServerLib.XML
