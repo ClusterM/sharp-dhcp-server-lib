@@ -1,0 +1,524 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SharpDHCPServerLib</name>
+    </assembly>
+    <members>
+        <member name="T:Cluster.SharpDHCPServer.DHCPRequest">
+            <summary>
+            DHCP request
+            </summary>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetRequestedOptionsList">
+            <summary>
+            Returns array of requested by client options
+            </summary>
+            <returns>Array of requested by client options</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.SendDHCPReply(Cluster.SharpDHCPServer.DHCPMsgType,System.Net.IPAddress,Cluster.SharpDHCPServer.DHCPReplyOptions)">
+            <summary>
+            Sends DHCP reply
+            </summary>
+            <param name="msgType">Type of DHCP message to send</param>
+            <param name="ip">IP for client</param>
+            <param name="replyData">Reply options (will be sent if requested)</param>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.SendDHCPReply(Cluster.SharpDHCPServer.DHCPMsgType,System.Net.IPAddress,Cluster.SharpDHCPServer.DHCPReplyOptions,System.Collections.Generic.Dictionary{Cluster.SharpDHCPServer.DHCPOption,System.Byte[]})">
+            <summary>
+            Sends DHCP reply
+            </summary>
+            <param name="msgType">Type of DHCP message to send</param>
+            <param name="ip">IP for client</param>
+            <param name="replyData">Reply options (will be sent if requested)</param>
+            <param name="otherForceOptions">Force reply options (will be sent anyway)</param>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetOptionData(Cluster.SharpDHCPServer.DHCPOption)">
+            <summary>
+            Returns option content
+            </summary>
+            <param name="option">Option to retrieve</param>
+            <returns>Option content</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetAllOptions">
+            <summary>
+            Returns all options
+            </summary>
+            <returns>Options dictionary</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetCiaddr">
+            <summary>
+            Returns ciaddr (client IP address)
+            </summary>
+            <returns>ciaddr</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetGiaddr">
+            <summary>
+            Returns giaddr (gateway IP address switched by relay)
+            </summary>
+            <returns>giaddr</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetChaddr">
+            <summary>
+            Returns chaddr (client hardware address)
+            </summary>
+            <returns>chaddr</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetRequestedIP">
+            <summary>
+            Returns requested IP (option 50)
+            </summary>
+            <returns>Requested IP</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetMsgType">
+            <summary>
+            Returns type of DHCP request
+            </summary>
+            <returns>DHCP message type</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetRawPacket">
+            <summary>
+            Returns entire content of DHCP packet
+            </summary>
+            <returns>DHCP packet</returns>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPRequest.GetRelayInfo">
+            <summary>
+            Returns relay info (option 82)
+            </summary>
+            <returns>Relay info</returns>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket">
+            <summary>
+            Raw DHCP packet
+            </summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.op">
+            <summary>Op code:   1 = boot request, 2 = boot reply</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.htype">
+            <summary>Hardware address type</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.hlen">
+            <summary>Hardware address length: length of MACID</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.hops">
+            <summary>Hardware options</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.xid">
+            <summary>Transaction id</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.secs">
+            <summary>Elapsed time from trying to boot</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.flags">
+            <summary>Flags</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.ciaddr">
+            <summary>Client IP</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.yiaddr">
+            <summary>Your client IP</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.siaddr">
+            <summary>Server IP</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.giaddr">
+            <summary>Relay agent IP</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.chaddr">
+            <summary>Client HW address</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.sname">
+            <summary>Optional server host name</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.file">
+            <summary>Boot file name</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.mcookie">
+            <summary>Magic cookie</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPRequest.DHCPPacket.options">
+            <summary>Options (rest)</summary>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.DHCPServer">
+            <summary>
+            DHCP Server
+            </summary>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPServer.#ctor(System.Net.IPAddress)">
+            <summary>
+            Creates DHCP server, it will be started instantly
+            </summary>
+            <param name="bindIp">IP address to bind</param>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPServer.#ctor">
+            <summary>Creates DHCP server, it will be started instantly</summary>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.DHCPServer.Dispose">
+            <summary>Disposes DHCP server</summary>
+        </member>
+        <member name="E:Cluster.SharpDHCPServer.DHCPServer.OnDataReceived">
+            <summary>Will be called on any DHCP message</summary>
+        </member>
+        <member name="E:Cluster.SharpDHCPServer.DHCPServer.OnDiscover">
+            <summary>Will be called on any DISCOVER message</summary>
+        </member>
+        <member name="E:Cluster.SharpDHCPServer.DHCPServer.OnRequest">
+            <summary>Will be called on any REQUEST message</summary>
+        </member>
+        <member name="E:Cluster.SharpDHCPServer.DHCPServer.OnDecline">
+            <summary>Will be called on any DECLINE message</summary>
+        </member>
+        <member name="E:Cluster.SharpDHCPServer.DHCPServer.OnReleased">
+            <summary>Will be called on any DECLINE released</summary>
+        </member>
+        <member name="E:Cluster.SharpDHCPServer.DHCPServer.OnInform">
+            <summary>Will be called on any DECLINE inform</summary>
+        </member>
+        <member name="P:Cluster.SharpDHCPServer.DHCPServer.ServerName">
+            <summary>Server name (optional)</summary>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.DHCPServer.DHCPDataReceivedEventHandler">
+            <summary>Delegate for DHCP message</summary>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.DHCPMsgType">
+            <summary>DHCP message type</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPDISCOVER">
+            <summary>DHCP DISCOVER message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPOFFER">
+            <summary>DHCP OFFER message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPREQUEST">
+            <summary>DHCP REQUEST message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPDECLINE">
+            <summary>DHCP DECLINE message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPACK">
+            <summary>DHCP ACK message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPNAK">
+            <summary>DHCP NAK message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPRELEASE">
+            <summary>DHCP RELEASE message</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPMsgType.DHCPINFORM">
+            <summary>DHCP INFORM message</summary>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.DHCPOption">
+            <summary>DHCP option enum</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.SubnetMask">
+            <summary>Option 1</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TimeOffset">
+            <summary>Option 2</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.Router">
+            <summary>Option 3</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TimeServer">
+            <summary>Option 4</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NameServer">
+            <summary>Option 5</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DomainNameServers">
+            <summary>Option 6</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.LogServer">
+            <summary>Option 7</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.CookieServer">
+            <summary>Option 8</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.LPRServer">
+            <summary>Option 9</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ImpressServer">
+            <summary>Option 10</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ResourceLocServer">
+            <summary>Option 11</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.HostName">
+            <summary>Option 12</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.BootFileSize">
+            <summary>Option 13</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.MeritDump">
+            <summary>Option 14</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DomainName">
+            <summary>Option 15</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.SwapServer">
+            <summary>Option 16</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.RootPath">
+            <summary>Option 17</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ExtensionsPath">
+            <summary>Option 18</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.IpForwarding">
+            <summary>Option 19</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NonLocalSourceRouting">
+            <summary>Option 20</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.PolicyFilter">
+            <summary>Option 21</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.MaximumDatagramReAssemblySize">
+            <summary>Option 22</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DefaultIPTimeToLive">
+            <summary>Option 23</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.PathMTUAgingTimeout">
+            <summary>Option 24</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.PathMTUPlateauTable">
+            <summary>Option 25</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.InterfaceMTU">
+            <summary>Option 26</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.AllSubnetsAreLocal">
+            <summary>Option 27</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.BroadcastAddress">
+            <summary>Option 28</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.PerformMaskDiscovery">
+            <summary>Option 29</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.MaskSupplier">
+            <summary>Option 30</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.PerformRouterDiscovery">
+            <summary>Option 31</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.RouterSolicitationAddress">
+            <summary>Option 32</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.StaticRoute">
+            <summary>Option 33</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TrailerEncapsulation">
+            <summary>Option 34</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ARPCacheTimeout">
+            <summary>Option 35</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.EthernetEncapsulation">
+            <summary>Option 36</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TCPDefaultTTL">
+            <summary>Option 37</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TCPKeepaliveInterval">
+            <summary>Option 38</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TCPKeepaliveGarbage">
+            <summary>Option 39</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetworkInformationServiceDomain">
+            <summary>Option 40</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetworkInformationServers">
+            <summary>Option 41</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetworkTimeProtocolServers">
+            <summary>Option 42</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.VendorSpecificInformation">
+            <summary>Option 43</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetBIOSoverTCPIPNameServer">
+            <summary>Option 44</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetBIOSoverTCPIPDatagramDistributionServer">
+            <summary>Option 45</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetBIOSoverTCPIPNodeType">
+            <summary>Option 46</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetBIOSoverTCPIPScope">
+            <summary>Option 47</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.XWindowSystemFontServer">
+            <summary>Option 48</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.XWindowSystemDisplayManager">
+            <summary>Option 49</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.RequestedIPAddress">
+            <summary>Option 50</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.IPAddressLeaseTime">
+            <summary>Option 51</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.OptionOverload">
+            <summary>Option 52</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DHCPMessageTYPE">
+            <summary>Option 53</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ServerIdentifier">
+            <summary>Option 54</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ParameterRequestList">
+            <summary>Option 55</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.Message">
+            <summary>Option 56</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.MaximumDHCPMessageSize">
+            <summary>Option 57</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.RenewalTimeValue_T1">
+            <summary>Option 58</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.RebindingTimeValue_T2">
+            <summary>Option 59</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.Vendorclassidentifier">
+            <summary>Option 60</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.ClientIdentifier">
+            <summary>Option 61</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetWateIPDomainName">
+            <summary>Option 62</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetWateIPInformation">
+            <summary>Option 63</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetworkInformationServicePlusDomain">
+            <summary>Option 64</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NetworkInformationServicePlusServers">
+            <summary>Option 65</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.TFTPServerName">
+            <summary>Option 66</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.BootfileName">
+            <summary>Option 67</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.MobileIPHomeAgent">
+            <summary>Option 68</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.SMTPServer">
+            <summary>Option 69</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.POP3Server">
+            <summary>Option 70</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.NNTPServer">
+            <summary>Option 71</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DefaultWWWServer">
+            <summary>Option 72</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DefaultFingerServer">
+            <summary>Option 73</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.DefaultIRCServer">
+            <summary>Option 74</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.StreetTalkServer">
+            <summary>Option 75</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.STDAServer">
+            <summary>Option 76</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.RelayInfo">
+            <summary>Option 82</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.StaticRoutes">
+            <summary>Option 121</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.StaticRoutesWin">
+            <summary>Option 249</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPOption.END_Option">
+            <summary>Option 255 (END option)</summary>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.DHCPReplyOptions">
+            <summary>Reply options</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.SubnetMask">
+            <summary>IP address</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.IPAddressLeaseTime">
+            <summary>IP address lease time (seconds)</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.RenewalTimeValue_T1">
+            <summary>Renewal time (seconds)</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.RebindingTimeValue_T2">
+            <summary>Rebinding time (seconds)</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.DomainName">
+            <summary>Domain name</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.ServerIdentifier">
+            <summary>IP address of DHCP server</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.RouterIP">
+            <summary>Router (gateway) IP</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.DomainNameServers">
+            <summary>Domain name servers (DNS)</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.LogServerIP">
+            <summary>Log server IP</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.StaticRoutes">
+            <summary>Static routes</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.DHCPReplyOptions.OtherRequestedOptions">
+            <summary>Other options which will be sent on request</summary>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.NetworkRoute">
+            <summary>Network route</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.NetworkRoute.Network">
+            <summary>IP address of destination network</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.NetworkRoute.NetMaskLength">
+            <summary>Subnet mask length</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.NetworkRoute.Gateway">
+            <summary>Gateway</summary>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.NetworkRoute.#ctor(System.Net.IPAddress,System.Byte,System.Net.IPAddress)">
+            <summary>Creates network route</summary>
+            <param name="network">IP address to bind</param>
+            <param name="netMaskLength">Subnet mask length</param>
+            <param name="gateway">Gateway</param>
+        </member>
+        <member name="M:Cluster.SharpDHCPServer.NetworkRoute.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>Creates network route</summary>
+            <param name="network">IP address to bind</param>
+            <param name="netMask">Subnet mask</param>
+            <param name="gateway">Gateway</param>
+        </member>
+        <member name="T:Cluster.SharpDHCPServer.RelayInfo">
+            <summary>DHCP relay information (option 82)</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.RelayInfo.AgentCircuitID">
+            <summary>Agent circuit ID</summary>
+        </member>
+        <member name="F:Cluster.SharpDHCPServer.RelayInfo.AgentRemoteID">
+            <summary>Agent remote ID</summary>
+        </member>
+    </members>
+</doc>

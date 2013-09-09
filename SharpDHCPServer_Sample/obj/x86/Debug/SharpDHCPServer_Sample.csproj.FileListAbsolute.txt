@@ -1,0 +1,15 @@
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServer_Sample.exe
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServer_Sample.pdb
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\obj\x86\Debug\SharpDHCPServer_Sample.exe
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\obj\x86\Debug\SharpDHCPServer_Sample.pdb
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServerLib.dll
+D:\Projects\SmallDHCPServer_CodeProject\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServerLib.pdb
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServer_Sample.exe
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServer_Sample.pdb
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServerLib.dll
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServerLib.pdb
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\obj\x86\Debug\SharpDHCPServer_Sample.exe
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\obj\x86\Debug\SharpDHCPServer_Sample.pdb
+D:\Projects\SharpDHCPServer\SharpDHCPServer_Sample\bin\Debug\SharpDHCPServerLib.xml
