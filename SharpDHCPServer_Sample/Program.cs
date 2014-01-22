@@ -70,9 +70,13 @@ namespace Cluster.SharpDHCPServer_Sample
                 Console.WriteLine();
             }
             // Option 82 info
-            var relayInfo = dhcpRequest.GetRelayInfo();
-            if (relayInfo.AgentCircuitID != null) Console.WriteLine("Relay agent circuit ID: " + ByteArrayToString(relayInfo.AgentCircuitID));
-            if (relayInfo.AgentRemoteID != null) Console.WriteLine("Relay agent remote ID: " + ByteArrayToString(relayInfo.AgentRemoteID));
+            var relayInfoN = dhcpRequest.GetRelayInfo();
+            if (relayInfoN != null)
+            {
+                var relayInfo = (RelayInfo)relayInfoN;
+                if (relayInfo.AgentCircuitID != null) Console.WriteLine("Relay agent circuit ID: " + ByteArrayToString(relayInfo.AgentCircuitID));
+                if (relayInfo.AgentRemoteID != null) Console.WriteLine("Relay agent remote ID: " + ByteArrayToString(relayInfo.AgentRemoteID));
+            }
             Console.WriteLine();
 
             var replyOptions = new DHCPReplyOptions();
